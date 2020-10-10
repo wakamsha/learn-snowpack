@@ -1,4 +1,4 @@
-export const Router = {
+export const Routes = {
   paths: {
     home: '/',
     profile: '/profile',
@@ -6,5 +6,6 @@ export const Router = {
     profileShow: '/profile/show',
     profileFoo: '/profile/foo',
     list: '/list',
+    users: '/users',
   },
 } as const;

@@ -1,5 +1,4 @@
-import { Route, Switch, matchPath } from 'react-router-dom';
-import { Routing } from './Routing';
+import { Route, Switch, matchPath, useLocation } from 'react-router-dom';
 import { Transition } from './Transition';
 import React, { Children, ReactNode } from 'react';
 
@@ -8,7 +7,7 @@ type Props = {
 };
 
 export const PageTransition = ({ children }: Props) => {
-  const { location } = Routing.useStore();
+  const location = useLocation();
 
   let match: any;
 
@@ -19,7 +18,7 @@ export const PageTransition = ({ children }: Props) => {
 
   return (
     <Transition id={match ? match.path + JSON.stringify(match.params) : ''}>
-      <Switch location={location}>{children}</Switch>
+      <Switch>{children}</Switch>
     </Transition>
   );
 };

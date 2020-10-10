@@ -1,7 +1,8 @@
+import { css } from 'emotion';
 import React from 'react';
 
 export const HomePage = () => (
-  <>
+  <div className={baseStyle}>
     <h1>Home Page</h1>
     <p>
       Transpile w/{' '}
@@ -9,5 +10,9 @@ export const HomePage = () => (
         <strong>Snowpack</strong>
       </a>
     </p>
-  </>
+  </div>
 );
+
+const baseStyle = css({
+  padding: 16,
+});

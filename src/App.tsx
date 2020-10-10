@@ -1,26 +1,30 @@
 import React from 'react';
 import { Navigation } from './components/Navigation';
-import { Route } from 'react-router-dom';
-import { Router } from './constants/Router';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Routes } from './constants/Routes';
 import { HomePage } from './pages/HomePage';
 import { ListPage } from './pages/ListPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { css } from 'emotion';
 import { ProfilePage } from './pages/profile';
+import { UsersPage } from './pages/UserPage';
 import { PageTransition } from './components/PageTransition';
 
 export const App = () => (
-  <div className={baseStyle}>
-    <Navigation />
-    <div className={contentStyle}>
-      <PageTransition>
-        <Route path={Router.paths.home} component={HomePage} exact />
-        <Route path={Router.paths.profile} component={ProfilePage} />
-        <Route path={Router.paths.list} component={ListPage} />
-        <Route component={NotFoundPage} />
-      </PageTransition>
+  <BrowserRouter>
+    <div className={baseStyle}>
+      <Navigation />
+      <div className={contentStyle}>
+        <PageTransition>
+          <Route path={Routes.paths.home} component={HomePage} exact />
+          <Route path={Routes.paths.profile} component={ProfilePage} />
+          <Route path={Routes.paths.list} component={ListPage} />
+          <Route path={Routes.paths.users} component={UsersPage} />
+          <Route component={NotFoundPage} />
+        </PageTransition>
+      </div>
     </div>
-  </div>
+  </BrowserRouter>
 );
 
 const baseStyle = css({
@@ -29,7 +33,7 @@ const baseStyle = css({
 });
 
 const contentStyle = css({
-  padding: 16,
+  padding: 0,
   height: '100vh',
   flexGrow: 1,
 });

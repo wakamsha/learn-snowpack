@@ -112,6 +112,7 @@ const ShowSection = () => {
 
 const baseStyle = css({
   display: 'flex',
+  padding: 16,
 });
 
 const columnStyle = css({

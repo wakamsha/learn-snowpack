@@ -1,28 +1,31 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { Router } from '../constants/Router';
+import { Routes } from '../constants/Routes';
 import { css } from 'emotion';
 
 export const Navigation = () => (
   <nav className={baseStyle}>
-    <h1 className={titleStyle}>Unstated Basic</h1>
+    <h1 className={titleStyle}>App w/ Snowpack</h1>
     <ul className={navigationStyle}>
       <li>
-        <Link to={Router.paths.home}>Home</Link>
+        <Link to={Routes.paths.home}>Home</Link>
       </li>
       <li>
         Profile
         <ul>
           <li>
-            <Link to={Router.paths.profileEdit}>Edit</Link>
+            <Link to={Routes.paths.profileEdit}>Edit</Link>
           </li>
           <li>
-            <Link to={Router.paths.profileShow}>Show</Link>
+            <Link to={Routes.paths.profileShow}>Show</Link>
           </li>
         </ul>
       </li>
       <li>
-        <Link to={Router.paths.list}>List</Link>
+        <Link to={Routes.paths.list}>List</Link>
+      </li>
+      <li>
+        <Link to={Routes.paths.users}>Users</Link>
       </li>
     </ul>
   </nav>

@@ -1,8 +1,8 @@
 import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
 import { App } from './App';
-import { Routing } from './components/Routing';
 import { injectGlobal } from 'emotion';
+import { configure } from 'mobx';
 
 injectGlobal({
   '*, *:before, *:after': {
@@ -28,11 +28,13 @@ injectGlobal({
   },
 });
 
+configure({
+  enforceActions: 'always',
+});
+
 render(
   <StrictMode>
-    <Routing.Provider>
-      <App />
-    </Routing.Provider>
+    <App />
   </StrictMode>,
   document.getElementById('app'),
 );
