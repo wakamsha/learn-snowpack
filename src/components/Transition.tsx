@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, useState, useMemo } from 'react';
+import React, { ReactNode, useMemo, useRef, useState } from 'react';
 import { css } from 'emotion';
 import { Duration, Easing } from '../constants/Style';
 
@@ -37,17 +37,19 @@ export const Transition = ({ id: propId, children }: Props) => {
       //
       // 1. 遷移元の HTML 要素をまるごと複製し、 state に格納してレンダリングする。
       // 2. 遷移先の要素が格納される Div コンテナに css クラスを付与してアニメーションを開始させる。
-      // 3. 1フレーム置いたのち下記を実行する。
-      //   3-a. アニメーション用 CSS クラスを外す。CSS アニメーション自体はキャンセルされず最後まで実行される。
+      // 3. アニメーション分の時間を置いたのち下記を実行する。
+      //   3-a. アニメーション用 CSS クラスを外す。
       //   3-b. 遷移元の HTML 要素を消去する。
       setId(propId);
       setHtml(nextElm.current.innerHTML);
+
       nextElm.current.classList.add(enterStyle);
-      window.requestAnimationFrame(() => {
+
+      window.setTimeout(() => {
         if (!nextElm.current) return;
         nextElm.current.classList.remove(enterStyle);
         setHtml('');
-      });
+      }, ENTER_DELAY);
     }
   }, [html, id, propId]);
 
