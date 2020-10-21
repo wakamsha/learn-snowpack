@@ -1,3 +1,13 @@
+export const Color = {
+  Primary: '#7e808c',
+  Inverse: '#D2397C',
+} as const;
+export type Color = ValueOf<typeof Color>;
+
+export const FontFamily = {
+  Regular: 'system-ui',
+} as const;
+
 export const Duration = {
   Fade: '0.15s',
   Enter: '0.25s',

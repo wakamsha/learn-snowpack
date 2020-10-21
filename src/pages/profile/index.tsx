@@ -12,14 +12,14 @@ export const ProfilePage = () => (
     <h1>Profile!</h1>
     <ProfileContainer.Provider>
       <PageTransition>
-        <Route path={Routes.paths.profileShow} component={ProfileShowPage} />
-        <Route path={Routes.paths.profileEdit} component={ProfileEditPage} />
-        <Redirect to={Routes.paths.profileShow} />
+        <Route path={Routes.Paths.ProfileShow} component={ProfileShowPage} />
+        <Route path={Routes.Paths.ProfileEdit} component={ProfileEditPage} />
+        <Redirect to={Routes.Paths.ProfileShow} />
       </PageTransition>
     </ProfileContainer.Provider>
   </div>
 );
 
-const baseStyle = css({
-  padding: 16,
-});
+const baseStyle = css`
+  padding: 16px;
+`;

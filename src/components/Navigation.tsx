@@ -8,24 +8,27 @@ export const Navigation = () => (
     <h1 className={titleStyle}>App w/ Snowpack</h1>
     <ul className={navigationStyle}>
       <li>
-        <Link to={Routes.paths.home}>Home</Link>
+        <Link to={Routes.Paths.Home}>Home</Link>
+      </li>
+      <li>
+        <Link to={Routes.Paths.Catalog}>Catalog</Link>
       </li>
       <li>
         Profile
         <ul>
           <li>
-            <Link to={Routes.paths.profileEdit}>Edit</Link>
+            <Link to={Routes.Paths.ProfileEdit}>Edit</Link>
           </li>
           <li>
-            <Link to={Routes.paths.profileShow}>Show</Link>
+            <Link to={Routes.Paths.ProfileShow}>Show</Link>
           </li>
         </ul>
       </li>
       <li>
-        <Link to={Routes.paths.list}>List</Link>
+        <Link to={Routes.Paths.List}>List</Link>
       </li>
       <li>
-        <Link to={Routes.paths.users}>Users</Link>
+        <Link to={Routes.Paths.Users}>Users</Link>
       </li>
     </ul>
   </nav>

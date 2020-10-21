@@ -9,6 +9,7 @@ import { css } from 'emotion';
 import { ProfilePage } from './pages/profile';
 import { UsersPage } from './pages/UserPage';
 import { PageTransition } from './components/PageTransition';
+import { CatalogPage } from './pages/CatalogPage';
 
 export const App = () => (
   <BrowserRouter>
@@ -16,10 +17,11 @@ export const App = () => (
       <Navigation />
       <div className={contentStyle}>
         <PageTransition>
-          <Route path={Routes.paths.home} component={HomePage} exact />
-          <Route path={Routes.paths.profile} component={ProfilePage} />
-          <Route path={Routes.paths.list} component={ListPage} />
-          <Route path={Routes.paths.users} component={UsersPage} />
+          <Route path={Routes.Paths.Home} component={HomePage} exact />
+          <Route path={Routes.Paths.Catalog} component={CatalogPage} />
+          <Route path={Routes.Paths.Profile} component={ProfilePage} />
+          <Route path={Routes.Paths.List} component={ListPage} />
+          <Route path={Routes.Paths.Users} component={UsersPage} />
           <Route component={NotFoundPage} />
         </PageTransition>
       </div>
