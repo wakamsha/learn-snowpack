@@ -1,5 +1,5 @@
-import { CreateUserRequest, CreateUserResponse, User } from './model';
 import qs from 'qs';
+import { CreateUserRequest, CreateUserResponse, User } from './model';
 
 export type Error = {
   conditions: string[];

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@learn-snowpack/core": ["../core/src/index.ts"],
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}

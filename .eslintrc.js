@@ -1,20 +1,28 @@
 module.exports = {
   extends: [
     'airbnb',
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:react/recommended',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
     'prettier/react',
   ],
-  parserOptions: {
-    tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json', './packages/**/tsconfig.json'],
-  },
   env: {
     browser: true,
-    es6: true,
+    es2021: true,
   },
-  globals: {},
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    tsconfigRootDir: __dirname,
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
+    sourceType: 'module',
+    project: ['./tsconfig.json', './packages/**/tsconfig.json'],
+  },
   plugins: ['react', 'react-hooks'],
   rules: {
     // Enable
@@ -39,12 +47,21 @@ module.exports = {
         exceptAfterSingleLine: true,
       },
     ],
+    'import/order': [
+      'warn',
+      {
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
     'no-case-declarations': ['error'],
     'no-console': [
       'error',
       {
         allow: ['info', 'warn', 'error', 'time', 'timeEnd'],
-      }
+      },
     ],
     'no-restricted-syntax': [
       'error',
@@ -65,14 +82,6 @@ module.exports = {
     'react/sort-comp': ['error'],
     'react-hooks/exhaustive-deps': ['warn'],
     'react-hooks/rules-of-hooks': ['error'],
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: false,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
-      },
-    ],
 
     // Disable
     '@typescript-eslint/ban-types': ['off'],
@@ -83,7 +92,6 @@ module.exports = {
     'import/extensions': ['off'],
     'import/no-extraneous-dependencies': ['off'],
     'import/no-unresolved': ['off'],
-    'import/order': ['off'],
     'import/prefer-default-export': ['off'],
     'jsx-a11y/accessible-emoji': ['off'],
     'jsx-a11y/control-has-associated-label': ['off'],
@@ -108,7 +116,6 @@ module.exports = {
     'no-shadow': ['off'],
     'no-throw-literal': ['off'],
     'no-unused-expressions': ['off'],
-    'sort-imports': ['off'],
     'react/button-has-type': ['off'],
     'react/jsx-indent': ['off'],
     'react/jsx-props-no-spreading': ['off'],

@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import React, { useMemo } from 'react';
 import { GetForm } from './GetForm';
 import { Log } from './Log';

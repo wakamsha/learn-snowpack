@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
+import { css } from '@emotion/css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Routes } from '../constants/Routes';
-import { css } from 'emotion';
 
 export const Navigation = () => (
   <nav className={baseStyle}>

@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@learn-snowpack/core": "1.0.0"
+  },
+  "scripts": {
+    "setup": "snowpack install",
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  }
+}

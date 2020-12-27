@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import { observer } from 'mobx-react';
 import React from 'react';
 import { useContext } from '../../hooks/useContext';
@@ -22,14 +22,14 @@ const baseStyle = css({
   height: '100%',
   '> pre': {
     height: '100%',
-    margin: 0,
     padding: 16,
+    margin: 0,
     overflow: 'auto',
     color: '#d1edff',
     '> code': {
-      lineHeight: 1.3,
       fontFamily: 'source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace',
       fontSize: '0.65rem',
+      lineHeight: 1.3,
     },
   },
 });

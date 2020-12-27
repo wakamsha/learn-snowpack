@@ -1,4 +1,4 @@
-import { injectGlobal } from 'emotion';
+import { injectGlobal } from '@emotion/css';
 import { FontFamily } from '../constants/Style';
 
 /**
@@ -32,10 +32,10 @@ export function applyGlobalStyle() {
       boxSizing: 'border-box',
     },
     html: {
-      fontFamily: 'sans-serif',
-      WebkitTextSizeAdjust: '100%',
-      WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       overflowX: 'hidden',
+      fontFamily: 'sans-serif',
+      webkitTextSizeAdjust: '100%',
+      webkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
       scrollBehavior: 'smooth',
     },
     body: {
@@ -47,8 +47,8 @@ export function applyGlobalStyle() {
       textDecorationSkipInk: 'auto',
     },
     'img, picture': {
-      maxWidth: '100%',
       display: 'block',
+      maxWidth: '100%',
     },
     'input, button, textarea, select': {
       font: 'inherit',
@@ -56,8 +56,8 @@ export function applyGlobalStyle() {
 
     // Scaffold
     'html, body': {
-      margin: 0,
       padding: 0,
+      margin: 0,
       fontFamily: FontFamily.Regular,
       fontWeight: 500,
       fontFeatureSettings: `'palt' 1`,
